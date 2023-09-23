@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "name": "Hello Extensions",
+    "description": "Base Level Extension",
+    "version": "1.0",
+    "action": {
+      "default_popup": "src/pages/popup/index.html",
+      "default_icon": "hello_extensions.png"
+    },
+    "permissions": [
+      "nativeMessaging"
+    ],
+    "content_scripts": [
+        {
+          "js": ["src/pages/content/index.js"],
+          "matches": [
+            "https://developer.chrome.com/docs/extensions/*",
+            "https://developer.chrome.com/docs/webstore/*"
+          ]
+        }
+      ],
+      "background": {  "service_worker": "src/pages/background/index.js" }
+  }

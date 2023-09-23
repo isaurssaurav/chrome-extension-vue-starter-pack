@@ -1,0 +1,30 @@
+{
+    "compilerOptions": {
+      "target": "ES6",
+      "useDefineForClassFields": true,
+      "module": "ESNext",
+      "lib": [
+        "WebWorker",
+        "ES2021"
+    ],
+      "skipLibCheck": true,
+  
+      /* Bundler mode */
+      "moduleResolution": "bundler",
+      "allowImportingTsExtensions": true,
+      "resolveJsonModule": true,
+      "isolatedModules": true,
+      "noEmit": true,
+      "sourceMap": true,
+  
+      /* Linting */
+      "strict": true,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "noFallthroughCasesInSwitch": true,
+      "types": ["chrome"]
+ 
+    },
+    "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue"],
+    "references": [{ "path": "./tsconfig.node.json" }]
+  }
