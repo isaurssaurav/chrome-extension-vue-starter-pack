@@ -1,1 +1,1 @@
-console.log('content-loaded-lol')
+console.log("Content Script!");
