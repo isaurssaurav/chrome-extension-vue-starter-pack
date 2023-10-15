@@ -10,7 +10,7 @@
     "lint:fix": "prettier . --write"
   },
   "dependencies": {
-    "hot-reload-extension-vite": "file:../hot-reload-extension-vite",
+    "hot-reload-extension-vite": "^1.0.8",
     "vue": "^3.3.4"
   },
   "devDependencies": {
