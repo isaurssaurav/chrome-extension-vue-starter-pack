@@ -1,10 +1,10 @@
 import { defineConfig } from "vite";
-import { resolve } from "path";
+import path, { resolve } from "path";
 import vue from "@vitejs/plugin-vue";
 import { viteStaticCopy } from "vite-plugin-static-copy";
 import hotReloadExtension from "hot-reload-extension-vite";
 
-export default defineConfig((test) => {
+export default defineConfig(() => {
   return {
     plugins: [
       vue(),
@@ -29,11 +29,18 @@ export default defineConfig((test) => {
           background: resolve(__dirname, "src/pages/background/index.ts"),
           "dev-tools": resolve(__dirname, "src/pages/dev-tools/index.html"),
           panel: resolve(__dirname, "src/pages/panel/index.html"),
+          contentStyle: resolve(
+            __dirname,
+            "src/pages/content/contentStyle.scss",
+          ),
         },
         output: {
-          dir: "dist",
           entryFileNames: "src/pages/[name]/index.js",
           chunkFileNames: "assets/js/[name].js",
+          assetFileNames: (assetInfo) => {
+            const { name } = path.parse(assetInfo.name);
+            return `assets/[ext]/${name}.[ext]`;
+          },
         },
       },
     },
